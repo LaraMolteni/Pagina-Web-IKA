@@ -1,0 +1,213 @@
+body {
+    padding: 0px;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.encabezado {
+    position: relative;
+    width: 100%;
+    min-height: 40vh;
+    background: #2E5A44;
+    color: #F8F6F1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 20px 10px 20px;
+    text-align: center;
+
+    .ika-logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 170px;
+        margin: 0;
+    }
+
+    .sub-arc {
+        width: min(60vw, 100%);
+        margin-top: -8px;
+        overflow: hidden;
+
+        /* lo sube aún más cerca del h1 */
+        text {
+            fill: #F8F6F1;
+            font-family: 'Lora', serif;
+            font-size: clamp(20px, 3vw, 32px);
+            font-weight: 400;
+            letter-spacing: .05em;
+        }
+    }
+
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    background: rgba(46, 90, 68, .85);
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+
+    ul {
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px;
+        align-items: center;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        font: 600 14px/1.2 'Lora', serif;
+        max-width: 100%;
+    }
+
+    li {
+        white-space: nowrap;
+    }
+
+    a {
+        color: #F8F6F1;
+        text-decoration: none;
+        opacity: .95;
+        padding: 8px 2px;
+        border-bottom: 2px solid transparent;
+        transition: opacity .2s ease, border-color .2s ease;
+
+        &:hover {
+            opacity: 1;
+            border-color: rgba(248, 246, 241, .9);
+        }
+
+        &.active {
+            border-color: #F8F6F1;
+        }
+    }
+
+    .btn-outline {
+        border: 1.5px solid #F8F6F1;
+        border-radius: 999px;
+        padding: 8px 14px;
+
+        &:hover {
+            background: #F8F6F1;
+            color: #2E5A44;
+        }
+    }
+}
+
+.productos-slider {
+    background: #fff;
+    color: #2E5A44;
+    text-align: center;
+    padding: 64px 0;
+
+    h2 {
+        font: 700 36px 'Playfair Display', serif;
+        margin: 0 0 12px;
+    }
+
+    .subtitulo {
+        font: 650 25px 'Lora', serif;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: #6a7f74;
+        margin: 18px 18px;
+    }
+
+    .swiper {
+        width: min(1100px, 92vw);
+        margin: auto;
+        padding: 12px 0 28px;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        figure {
+            position: relative;
+            /* <-- necesario para el overlay */
+            margin: 0;
+            cursor: pointer;
+
+            img {
+                width: 200px;
+                height: 200px;
+                object-fit: contain;
+                filter: drop-shadow(0 8px 16px rgba(0, 0, 0, .12));
+                transition: transform .25s ease;
+            }
+
+            &:hover img {
+                transform: scale(1.05);
+            }
+
+            /* -------- overlay -------- */
+            figcaption {
+                position: absolute;
+                left: 50%;
+                bottom: -14px;
+                transform: translate(-50%, 12px);
+                /* oculto hacia abajo */
+                width: min(320px, 85%);
+                background: rgba(46, 90, 68, .94);
+                color: #F8F6F1;
+                padding: 12px 16px;
+                border-radius: 14px;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity .25s ease, transform .25s ease;
+                z-index: 5;
+                text-align: left;
+                /* se ve más prolijo */
+                font-family: 'Lora', serif;
+                text-align: center;
+
+                h4 {
+                    margin: 0 0 6px;
+                    font: 700 16px 'Playfair Display', serif;
+                }
+
+                p {
+                    margin: 0;
+                    font: 400 13px/1.45 'Lora', serif;
+                    opacity: .95;
+                }
+            }
+
+            /* mostrar con hover/teclado */
+            &:hover figcaption,
+            &:focus-within figcaption {
+                opacity: 1;
+                transform: translate(-50%, 0);
+                pointer-events: auto;
+            }
+        }
+
+        /* mostrar en móvil con clase .show-desc (lo pone el JS) */
+        &.show-desc {
+            figure figcaption {
+                opacity: 1;
+                transform: translate(-50%, 0);
+                pointer-events: auto;
+            }
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: #2E5A44;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #2E5A44;
+    }
+}

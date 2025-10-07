@@ -1,0 +1,188 @@
+@charset "UTF-8";
+body {
+  padding: 0px;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.encabezado {
+  position: relative;
+  width: 100%;
+  min-height: 40vh;
+  background: #2E5A44;
+  color: #F8F6F1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px 10px 20px;
+  text-align: center;
+}
+.encabezado .ika-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 170px;
+  margin: 0;
+}
+.encabezado .sub-arc {
+  width: min(60vw, 100%);
+  margin-top: -8px;
+  overflow: hidden;
+  /* lo sube aún más cerca del h1 */
+}
+.encabezado .sub-arc text {
+  fill: #F8F6F1;
+  font-family: "Lora", serif;
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  background: rgba(46, 90, 68, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+.topbar ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font: 600 14px/1.2 "Lora", serif;
+  max-width: 100%;
+}
+.topbar li {
+  white-space: nowrap;
+}
+.topbar a {
+  color: #F8F6F1;
+  text-decoration: none;
+  opacity: 0.95;
+  padding: 8px 2px;
+  border-bottom: 2px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+.topbar a:hover {
+  opacity: 1;
+  border-color: rgba(248, 246, 241, 0.9);
+}
+.topbar a.active {
+  border-color: #F8F6F1;
+}
+.topbar .btn-outline {
+  border: 1.5px solid #F8F6F1;
+  border-radius: 999px;
+  padding: 8px 14px;
+}
+.topbar .btn-outline:hover {
+  background: #F8F6F1;
+  color: #2E5A44;
+}
+
+.productos-slider {
+  background: #fff;
+  color: #2E5A44;
+  text-align: center;
+  padding: 64px 0;
+}
+.productos-slider h2 {
+  font: 700 36px "Playfair Display", serif;
+  margin: 0 0 12px;
+}
+.productos-slider .subtitulo {
+  font: 650 25px "Lora", serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6a7f74;
+  margin: 18px 18px;
+}
+.productos-slider .swiper {
+  width: min(1100px, 92vw);
+  margin: auto;
+  padding: 12px 0 28px;
+}
+.productos-slider .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* mostrar en móvil con clase .show-desc (lo pone el JS) */
+}
+.productos-slider .swiper-slide figure {
+  position: relative;
+  /* <-- necesario para el overlay */
+  margin: 0;
+  cursor: pointer;
+  /* -------- overlay -------- */
+  /* mostrar con hover/teclado */
+}
+.productos-slider .swiper-slide figure img {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.12));
+  transition: transform 0.25s ease;
+}
+.productos-slider .swiper-slide figure:hover img {
+  transform: scale(1.05);
+}
+.productos-slider .swiper-slide figure figcaption {
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  transform: translate(-50%, 12px);
+  /* oculto hacia abajo */
+  width: min(320px, 85%);
+  background: rgba(46, 90, 68, 0.94);
+  color: #F8F6F1;
+  padding: 12px 16px;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 5;
+  text-align: left;
+  /* se ve más prolijo */
+  font-family: "Lora", serif;
+  text-align: center;
+}
+.productos-slider .swiper-slide figure figcaption h4 {
+  margin: 0 0 6px;
+  font: 700 16px "Playfair Display", serif;
+}
+.productos-slider .swiper-slide figure figcaption p {
+  margin: 0;
+  font: 400 13px/1.45 "Lora", serif;
+  opacity: 0.95;
+}
+.productos-slider .swiper-slide figure:hover figcaption, .productos-slider .swiper-slide figure:focus-within figcaption {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+.productos-slider .swiper-slide.show-desc figure figcaption {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+.productos-slider .swiper-button-prev,
+.productos-slider .swiper-button-next {
+  color: #2E5A44;
+}
+.productos-slider .swiper-pagination-bullet-active {
+  background: #2E5A44;
+}/*# sourceMappingURL=inicio.css.map */
