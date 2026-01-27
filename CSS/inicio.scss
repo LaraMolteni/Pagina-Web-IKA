@@ -12,6 +12,7 @@ $bp-xl: 1200px;
   }
 }
 
+
 body {
   margin: 0;
   padding: 0;
@@ -51,6 +52,9 @@ body {
     overflow: hidden;
     height: 100vh;
     touch-action: none;
+    left: 0;
+    right: 0;
+    width: 100%;
   }
 }
 
@@ -249,10 +253,10 @@ body {
     }
 
     .topbar__menu {
-      position: sticky;
+      position: fixed;
       left: 12px;
       right: 12px;
-      top: calc(100% + 10px);
+      top: 64px;
 
       display: none;
       flex-direction: column;
@@ -321,7 +325,7 @@ body {
   overflow-x: visible;
 
   .subtitulo {
-    font: 700 25px 'Lora', serif;
+    font: 700 28px 'Lora', serif;
     letter-spacing: .18em;
     text-transform: uppercase;
     position: relative;
@@ -511,6 +515,9 @@ body {
 
   }
 
+  /* =========================
+   MODAL SABORES  
+  ========================= */
   .sabores-modal {
     position: fixed;
     inset: 0;
@@ -528,12 +535,12 @@ body {
 
     &__content {
       position: relative;
-      width: min(860px, calc(100% - 28px));
+      width: min(720px, calc(100% - 32px));
       margin: 0;
       background: #F8F6F1;
-      border-radius: 22px;
-      padding: 22px 22px 26px;
-      box-shadow: 0 30px 90px rgba(0, 0, 0, .35);
+      border-radius: 20px;
+      padding: 18px 18px 22px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
       border: 1px solid rgba(46, 90, 68, .18);
 
       overflow: visible;
@@ -560,25 +567,25 @@ body {
     &__header {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       padding: 6px 4px 8px;
 
       h3 {
         margin: 0;
-        font: 700 26px 'Playfair Display', serif;
+        font: 700 24px 'Playfair Display', serif;
         color: #2E5A44;
       }
     }
 
     &__sub {
       margin: 4px 0 0;
-      font: 400 14px 'Lora', serif;
+      font: 400 13px 'Lora', serif;
       color: rgba(46, 90, 68, .78);
     }
 
     &__img {
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       border-radius: 999px;
       object-fit: cover;
       border: 1px solid rgba(46, 90, 68, .22);
@@ -588,8 +595,8 @@ body {
     &__list {
       margin-top: 16px;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
 
       position: relative;
       overflow: visible;
@@ -608,10 +615,11 @@ body {
 
     &__list .chip {
       width: 100%;
-      min-height: 64px;
       margin-top: 0;
-      border-radius: 18px;
-      padding: 12px 14px;
+      min-height: 56px;
+      padding: 10px 12px;
+      border-radius: 16px;
+
 
       background: #fff;
       border: 1px solid rgba(46, 90, 68, .30);
@@ -628,7 +636,7 @@ body {
 
       .chip__label {
         -webkit-line-clamp: 2;
-        font-size: 16px;
+        font-size: 15px;
         line-height: 1.15;
         text-align: center;
       }
@@ -690,7 +698,6 @@ body {
   /* =========================
    SWIPER PALETAS
   ========================= */
-
   .paletas-swiper {
     position: relative;
     width: min(1100px, 96vw);
@@ -761,6 +768,35 @@ body {
         opacity: 1;
         transform: translateX(-50%) translateY(-4px);
       }
+
+      @include down($bp-md) {
+        .paletas-swiper {
+
+          .sabor-card {
+            width: 150px;
+
+            img {
+              max-width: 120px;
+              height: 170px;
+            }
+          }
+        }
+      }
+
+      @include down($bp-sm) {
+        .paletas-swiper {
+
+          .sabor-card {
+            width: 140px;
+
+            img {
+              max-width: 110px;
+              height: 160px;
+            }
+          }
+        }
+      }
+
     }
 
     .swiper-paletas-prev,
@@ -795,6 +831,210 @@ body {
 
     .swiper-wrapper {
       transition-timing-function: linear !important;
+    }
+  }
+
+  @include down($bp-md) {
+
+    .paletas-swiper {
+
+      .sabor-card {
+        width: 200px;
+
+        img {
+          max-width: 160px;
+          height: 200px;
+        }
+      }
+    }
+
+    .sabores-swiper {
+
+      .chip-category {
+        gap: 10px;
+
+        .chip__img {
+          width: 170px;
+          height: 170px;
+        }
+
+        .chip__label {
+          font-size: 17px;
+          max-width: 140px;
+        }
+      }
+
+      .swiper-span-prev {
+        left: -40px;
+      }
+
+      .swiper-span-next {
+        right: -40px;
+      }
+    }
+
+    .sabores-modal {
+
+      place-items: center;
+
+      &__content {
+        width: min(420px, 94vw);
+        max-height: 65dvh;
+        padding: 12px 12px 14px;
+        border-radius: 18px 18px 0 0;
+
+        overflow-y: auto;
+      }
+
+      &__header {
+        gap: 8px;
+        padding-bottom: 6px;
+
+        h3 {
+          font-size: 18px;
+        }
+      }
+
+      &__sub {
+        font-size: 12px;
+      }
+
+      &__img {
+        width: 42px;
+        height: 42px;
+      }
+
+      &__list {
+        margin-top: 10px;
+        gap: 8px;
+        grid-template-columns: 1fr;
+      }
+
+      &__list .chip {
+        min-height: 44px;
+        padding: 8px 10px;
+        border-radius: 14px;
+
+        .chip__label {
+          font-size: 14px;
+          line-height: 1.1;
+        }
+      }
+
+      &__close {
+        font-size: 24px;
+        top: 6px;
+        right: 10px;
+      }
+    }
+  }
+
+  @include down($bp-sm) {
+
+    .paletas-swiper {
+
+      .sabor-card {
+        width: 160px;
+        ;
+
+        img {
+          max-width: 130px;
+          height: 180px;
+        }
+      }
+    }
+
+    .sabores-swiper {
+
+      .sabores-mask {
+        padding: 10px 16px 40px;
+      }
+
+      .chip-category {
+        gap: 8px;
+
+        .chip__img {
+          width: 130px;
+          height: 130px;
+        }
+
+        .chip__label {
+          font-size: 15px;
+          max-width: 120px;
+        }
+      }
+
+      .swiper-span-prev,
+      .swiper-span-next {
+        display: none;
+      }
+    }
+
+    .sabores-modal {
+
+      place-items: center;
+
+      &__content {
+        width: min(420px, 94vw);
+        max-height: 65dvh;
+        padding: 12px 12px 14px;
+        border-radius: 18px 18px 0 0;
+
+        overflow-y: auto;
+      }
+
+      &__header {
+        gap: 8px;
+        padding-bottom: 6px;
+
+        h3 {
+          font-size: 18px;
+        }
+      }
+
+      &__sub {
+        font-size: 12px;
+      }
+
+      &__img {
+        width: 42px;
+        height: 42px;
+      }
+
+      &__list {
+        margin-top: 10px;
+        gap: 8px;
+        grid-template-columns: 1fr;
+      }
+
+      &__list .chip {
+        min-height: 44px;
+        padding: 8px 10px;
+        border-radius: 14px;
+
+        .chip__label {
+          font-size: 14px;
+          line-height: 1.1;
+        }
+      }
+
+      &__close {
+        font-size: 24px;
+        top: 6px;
+        right: 10px;
+      }
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 }
@@ -879,6 +1119,78 @@ body {
         margin-bottom: 14px;
         max-width: 52ch;
         line-height: 1.75;
+      }
+    }
+  }
+
+  @include down($bp-md) {
+    padding: 80px 0 60px;
+
+    .sobre-container {
+      width: min(920px, 92vw);
+      flex-direction: column; 
+      align-items: center;
+      gap: 18px;
+    }
+
+    .sobre-imgs {
+      width: 100%;
+      max-width: 520px; 
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+
+      img {
+        border-radius: 16px;
+
+        &:nth-child(1) {
+          grid-column: 1 / -1;
+          aspect-ratio: 16 / 9; 
+        }
+      }
+    }
+
+    .sobre-texto {
+      width: 100%;
+      text-align: center;
+      padding: 0 6px;
+
+      h2 {
+        font-size: 30px;
+      }
+
+      h3 {
+        font-size: 14px;
+        letter-spacing: .14em;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.65;
+        max-width: 60ch;
+        margin: 0 auto 12px;
+      }
+    }
+  }
+
+  @include down($bp-sm) {
+    padding: 70px 0 55px;
+
+    .sobre-imgs {
+      max-width: 420px;
+      gap: 8px;
+
+      img {
+        border-radius: 14px;
+      }
+    }
+
+    .sobre-texto {
+      h2 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 15px;
       }
     }
   }
@@ -1024,6 +1336,65 @@ body {
       border-color: rgba(37, 211, 102, .88);
     }
   }
+
+  @include down($bp-md) {
+    padding: 30px 0 70px;
+
+    .sucursales-header {
+      margin: 40px 0 26px;
+
+      h2 {
+        font-size: 34px;
+      }
+
+      p {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+    }
+
+    .sucursales-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      width: min(520px, 92vw);
+    }
+
+    .sucursal-card {
+      aspect-ratio: 16 / 10;
+      border-radius: 18px;
+
+      &__info {
+        left: 12px;
+        bottom: 12px;
+        gap: 6px;
+      }
+
+      &__actions {
+        gap: 8px;
+      }
+    }
+
+    .btn-mini {
+      padding: 8px 12px;
+      font-size: 11px;
+      letter-spacing: .10em;
+    }
+  }
+
+  @include down($bp-sm) {
+    .sucursales-header h2 {
+      font-size: 30px;
+    }
+
+    .sucursal-card {
+      aspect-ratio: 16 / 11;
+    }
+
+    .btn-mini {
+      padding: 9px 12px;
+      font-size: 11px;
+    }
+  }
 }
 
 /* ==========================
@@ -1134,6 +1505,57 @@ body {
     }
   }
 
+  @include down($bp-md) {
+
+    .pedidos-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      width: min(520px, 92vw);
+    }
+
+    .pedido-card {
+      padding: 18px 18px;
+      border-radius: 18px;
+      gap: 12px;
+      align-items: center;
+      text-align: center;
+
+      &__logo {
+        height: 34px;
+        justify-content: center;
+      }
+
+      &__texto {
+        h3 {
+          font-size: 18px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      &__btn {
+        align-self: center;
+        width: 100%;
+        max-width: 260px;
+      }
+    }
+  }
+
+  @include down($bp-sm) {
+    .pedido-card {
+      padding: 16px 14px;
+
+      &__logo {
+        height: 30px;
+      }
+
+      &__btn {
+        max-width: 240px;
+      }
+    }
+  }
 }
 
 /* ==========================
@@ -1353,6 +1775,96 @@ body {
     }
   }
 
+  @include down($bp-md) {
+    padding: 70px 0 80px;
+
+    .franquicias-header {
+      padding: 0 14px;
+
+      h2 {
+        font-size: 34px;
+      }
+
+      p {
+        font-size: 12px;
+        letter-spacing: .12em;
+      }
+
+      .franquicias-sub {
+        font-size: 14px;
+      }
+    }
+
+    .franquicias-form {
+      width: min(520px, 92vw);
+      padding: 18px 14px 22px;
+      border-radius: 20px;
+    }
+
+    .franq-block {
+      padding: 14px 12px 16px;
+      border-radius: 16px;
+      margin-bottom: 14px;
+
+      legend {
+        font-size: 16px;
+        padding: 0 8px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .franq-grid {
+      gap: 14px;
+
+      &--2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .franq-field {
+      gap: 6px;
+      margin-bottom: 12px;
+
+      label {
+        font-size: 13px;
+      }
+
+      input,
+      select,
+      textarea {
+        font-size: 14px;
+        padding: 11px 12px;
+        border-radius: 12px;
+      }
+
+      textarea {
+        min-height: 120px;
+      }
+    }
+
+    .franq-btn-enviar {
+      width: 100%;
+      max-width: 360px;
+      padding: 12px 18px;
+      margin-top: 18px;
+    }
+  }
+
+  @include down($bp-sm) {
+    .franquicias-header h2 {
+      font-size: 30px;
+    }
+
+    .franquicias-form {
+      width: min(440px, 92vw);
+      padding: 16px 12px 18px;
+      border-radius: 18px;
+    }
+
+    .franq-block legend {
+      font-size: 15px;
+    }
+  }
 }
 
 /* ==========================
@@ -1495,12 +2007,17 @@ body {
       opacity: .75;
       cursor: progress;
       pointer-events: none;
+      color: transparent;
       position: relative;
     }
 
     &.is-loading::after {
-      content: " Enviando…";
-      letter-spacing: .09em;
+      content: "Enviando…";
+      color: #F8F6F1;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 
@@ -1532,6 +2049,74 @@ body {
     }
   }
 
+  @include down($bp-md) {
+    padding: 60px 0 70px;
+
+    .contacto-header {
+      padding: 0 16px;
+
+      h2 {
+        font-size: 34px;
+        line-height: 1.05;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .contacto-form {
+      width: min(560px, 92vw);
+      padding: 18px 14px 20px;
+      border-radius: 18px;
+
+      &__grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    }
+
+    .contacto-field {
+
+      label {
+        font-size: 13px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        min-height: 46px;
+        padding: 12px 14px;
+        font-size: 14px;
+        border-radius: 14px;
+      }
+
+      textarea {
+        min-height: 140px;
+      }
+    }
+
+    .contacto-btn {
+      width: 100%;
+      justify-content: center;
+      padding: 12px 18px;
+      margin-top: 6px;
+    }
+
+    .contacto-form:focus-within {
+      transform: translateY(-2px);
+    }
+  }
+
+  @include down($bp-sm) {
+    .contacto-header h2 {
+      font-size: 30px;
+    }
+
+    .contacto-form {
+      padding: 16px 12px 18px;
+    }
+  }
 
 }
 
@@ -1612,6 +2197,57 @@ body {
     margin: 0;
     line-height: 1.35;
   }
+
+  @include down($bp-md) {
+    padding: 36px 0 26px;
+
+    .footer-inner {
+      grid-template-columns: 1fr;
+      gap: 18px;
+      text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      justify-self: center;
+      text-align: center;
+    }
+
+    .footer-logo-img {
+      width: 160px;
+      margin: 0 auto;
+    }
+
+    .footer-social-text {
+      margin-top: 4px;
+      font-size: 13px;
+    }
+
+    .footer-instagram {
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      opacity: .85;
+      max-width: 30ch;
+      margin: 0 auto;
+    }
+  }
+
+  @include down($bp-sm) {
+    padding: 30px 0 22px;
+
+    .footer-logo-img {
+      width: 140px;
+    }
+
+    .footer-inner {
+      gap: 14px;
+    }
+  }
 }
 
 #pedidos,
@@ -1683,5 +2319,12 @@ body {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  @include down($bp-md) {
+    right: 14px;
+    bottom: 14px;
+    width: 42px;
+    height: 42px;
   }
 }

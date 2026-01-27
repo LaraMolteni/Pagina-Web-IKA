@@ -26,6 +26,9 @@ body .modal-open {
   overflow: hidden;
   height: 100vh;
   touch-action: none;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
 .sobre-nosotros,
@@ -203,10 +206,10 @@ body .modal-open {
     display: inline-flex;
   }
   .topbar .topbar__menu {
-    position: sticky;
+    position: fixed;
     left: 12px;
     right: 12px;
-    top: calc(100% + 10px);
+    top: 64px;
     display: none;
     flex-direction: column;
     align-items: stretch;
@@ -265,11 +268,14 @@ body .modal-open {
      SWIPER SABORES 
    ========================= */
   /* =========================
+   MODAL SABORES  
+  ========================= */
+  /* =========================
    SWIPER PALETAS
   ========================= */
 }
 .productos-slider .subtitulo {
-  font: 700 25px "Lora", serif;
+  font: 700 28px "Lora", serif;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   position: relative;
@@ -435,12 +441,12 @@ body .modal-open {
 }
 .productos-slider .sabores-modal__content {
   position: relative;
-  width: min(860px, 100% - 28px);
+  width: min(720px, 100% - 32px);
   margin: 0;
   background: #F8F6F1;
-  border-radius: 22px;
-  padding: 22px 22px 26px;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+  padding: 18px 18px 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(46, 90, 68, 0.18);
   overflow: visible;
   z-index: 2;
@@ -463,22 +469,22 @@ body .modal-open {
 .productos-slider .sabores-modal__header {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   padding: 6px 4px 8px;
 }
 .productos-slider .sabores-modal__header h3 {
   margin: 0;
-  font: 700 26px "Playfair Display", serif;
+  font: 700 24px "Playfair Display", serif;
   color: #2E5A44;
 }
 .productos-slider .sabores-modal__sub {
   margin: 4px 0 0;
-  font: 400 14px "Lora", serif;
+  font: 400 13px "Lora", serif;
   color: rgba(46, 90, 68, 0.78);
 }
 .productos-slider .sabores-modal__img {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 999px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -488,8 +494,8 @@ body .modal-open {
 .productos-slider .sabores-modal__list {
   margin-top: 16px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
   position: relative;
   overflow: visible;
 }
@@ -504,10 +510,10 @@ body .modal-open {
 }
 .productos-slider .sabores-modal__list .chip {
   width: 100%;
-  min-height: 64px;
   margin-top: 0;
-  border-radius: 18px;
-  padding: 12px 14px;
+  min-height: 56px;
+  padding: 10px 12px;
+  border-radius: 16px;
   background: #fff;
   border: 1px solid rgba(46, 90, 68, 0.3);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
@@ -521,7 +527,7 @@ body .modal-open {
 }
 .productos-slider .sabores-modal__list .chip .chip__label {
   -webkit-line-clamp: 2;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.15;
   text-align: center;
 }
@@ -624,6 +630,24 @@ body .modal-open {
   opacity: 1;
   transform: translateX(-50%) translateY(-4px);
 }
+@media (max-width: 768px) {
+  .productos-slider .paletas-swiper .sabor-card .paletas-swiper .sabor-card {
+    width: 150px;
+  }
+  .productos-slider .paletas-swiper .sabor-card .paletas-swiper .sabor-card img {
+    max-width: 120px;
+    height: 170px;
+  }
+}
+@media (max-width: 480px) {
+  .productos-slider .paletas-swiper .sabor-card .paletas-swiper .sabor-card {
+    width: 140px;
+  }
+  .productos-slider .paletas-swiper .sabor-card .paletas-swiper .sabor-card img {
+    max-width: 110px;
+    height: 160px;
+  }
+}
 .productos-slider .paletas-swiper .swiper-paletas-prev,
 .productos-slider .paletas-swiper .swiper-paletas-next {
   position: absolute;
@@ -653,6 +677,155 @@ body .modal-open {
 }
 .productos-slider .paletas-swiper .swiper-wrapper {
   transition-timing-function: linear !important;
+}
+@media (max-width: 768px) {
+  .productos-slider .paletas-swiper .sabor-card {
+    width: 200px;
+  }
+  .productos-slider .paletas-swiper .sabor-card img {
+    max-width: 160px;
+    height: 200px;
+  }
+  .productos-slider .sabores-swiper .chip-category {
+    gap: 10px;
+  }
+  .productos-slider .sabores-swiper .chip-category .chip__img {
+    width: 170px;
+    height: 170px;
+  }
+  .productos-slider .sabores-swiper .chip-category .chip__label {
+    font-size: 17px;
+    max-width: 140px;
+  }
+  .productos-slider .sabores-swiper .swiper-span-prev {
+    left: -40px;
+  }
+  .productos-slider .sabores-swiper .swiper-span-next {
+    right: -40px;
+  }
+  .productos-slider .sabores-modal {
+    place-items: center;
+  }
+  .productos-slider .sabores-modal__content {
+    width: min(420px, 94vw);
+    max-height: 65dvh;
+    padding: 12px 12px 14px;
+    border-radius: 18px 18px 0 0;
+    overflow-y: auto;
+  }
+  .productos-slider .sabores-modal__header {
+    gap: 8px;
+    padding-bottom: 6px;
+  }
+  .productos-slider .sabores-modal__header h3 {
+    font-size: 18px;
+  }
+  .productos-slider .sabores-modal__sub {
+    font-size: 12px;
+  }
+  .productos-slider .sabores-modal__img {
+    width: 42px;
+    height: 42px;
+  }
+  .productos-slider .sabores-modal__list {
+    margin-top: 10px;
+    gap: 8px;
+    grid-template-columns: 1fr;
+  }
+  .productos-slider .sabores-modal__list .chip {
+    min-height: 44px;
+    padding: 8px 10px;
+    border-radius: 14px;
+  }
+  .productos-slider .sabores-modal__list .chip .chip__label {
+    font-size: 14px;
+    line-height: 1.1;
+  }
+  .productos-slider .sabores-modal__close {
+    font-size: 24px;
+    top: 6px;
+    right: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .productos-slider .paletas-swiper .sabor-card {
+    width: 160px;
+  }
+  .productos-slider .paletas-swiper .sabor-card img {
+    max-width: 130px;
+    height: 180px;
+  }
+  .productos-slider .sabores-swiper .sabores-mask {
+    padding: 10px 16px 40px;
+  }
+  .productos-slider .sabores-swiper .chip-category {
+    gap: 8px;
+  }
+  .productos-slider .sabores-swiper .chip-category .chip__img {
+    width: 130px;
+    height: 130px;
+  }
+  .productos-slider .sabores-swiper .chip-category .chip__label {
+    font-size: 15px;
+    max-width: 120px;
+  }
+  .productos-slider .sabores-swiper .swiper-span-prev,
+  .productos-slider .sabores-swiper .swiper-span-next {
+    display: none;
+  }
+  .productos-slider .sabores-modal {
+    place-items: center;
+  }
+  .productos-slider .sabores-modal__content {
+    width: min(420px, 94vw);
+    max-height: 65dvh;
+    padding: 12px 12px 14px;
+    border-radius: 18px 18px 0 0;
+    overflow-y: auto;
+  }
+  .productos-slider .sabores-modal__header {
+    gap: 8px;
+    padding-bottom: 6px;
+  }
+  .productos-slider .sabores-modal__header h3 {
+    font-size: 18px;
+  }
+  .productos-slider .sabores-modal__sub {
+    font-size: 12px;
+  }
+  .productos-slider .sabores-modal__img {
+    width: 42px;
+    height: 42px;
+  }
+  .productos-slider .sabores-modal__list {
+    margin-top: 10px;
+    gap: 8px;
+    grid-template-columns: 1fr;
+  }
+  .productos-slider .sabores-modal__list .chip {
+    min-height: 44px;
+    padding: 8px 10px;
+    border-radius: 14px;
+  }
+  .productos-slider .sabores-modal__list .chip .chip__label {
+    font-size: 14px;
+    line-height: 1.1;
+  }
+  .productos-slider .sabores-modal__close {
+    font-size: 24px;
+    top: 6px;
+    right: 10px;
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* ==========================
@@ -726,6 +899,66 @@ body .modal-open {
   margin-bottom: 14px;
   max-width: 52ch;
   line-height: 1.75;
+}
+@media (max-width: 768px) {
+  .sobre-nosotros {
+    padding: 80px 0 60px;
+  }
+  .sobre-nosotros .sobre-container {
+    width: min(920px, 92vw);
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .sobre-nosotros .sobre-imgs {
+    width: 100%;
+    max-width: 520px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .sobre-nosotros .sobre-imgs img {
+    border-radius: 16px;
+  }
+  .sobre-nosotros .sobre-imgs img:nth-child(1) {
+    grid-column: 1/-1;
+    aspect-ratio: 16/9;
+  }
+  .sobre-nosotros .sobre-texto {
+    width: 100%;
+    text-align: center;
+    padding: 0 6px;
+  }
+  .sobre-nosotros .sobre-texto h2 {
+    font-size: 30px;
+  }
+  .sobre-nosotros .sobre-texto h3 {
+    font-size: 14px;
+    letter-spacing: 0.14em;
+  }
+  .sobre-nosotros .sobre-texto p {
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 60ch;
+    margin: 0 auto 12px;
+  }
+}
+@media (max-width: 480px) {
+  .sobre-nosotros {
+    padding: 70px 0 55px;
+  }
+  .sobre-nosotros .sobre-imgs {
+    max-width: 420px;
+    gap: 8px;
+  }
+  .sobre-nosotros .sobre-imgs img {
+    border-radius: 14px;
+  }
+  .sobre-nosotros .sobre-texto h2 {
+    font-size: 28px;
+  }
+  .sobre-nosotros .sobre-texto p {
+    font-size: 15px;
+  }
 }
 
 /* ==========================
@@ -846,6 +1079,55 @@ body .modal-open {
   background: rgba(37, 211, 102, 0.72);
   border-color: rgba(37, 211, 102, 0.88);
 }
+@media (max-width: 768px) {
+  .sucursales {
+    padding: 30px 0 70px;
+  }
+  .sucursales .sucursales-header {
+    margin: 40px 0 26px;
+  }
+  .sucursales .sucursales-header h2 {
+    font-size: 34px;
+  }
+  .sucursales .sucursales-header p {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .sucursales .sucursales-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    width: min(520px, 92vw);
+  }
+  .sucursales .sucursal-card {
+    aspect-ratio: 16/10;
+    border-radius: 18px;
+  }
+  .sucursales .sucursal-card__info {
+    left: 12px;
+    bottom: 12px;
+    gap: 6px;
+  }
+  .sucursales .sucursal-card__actions {
+    gap: 8px;
+  }
+  .sucursales .btn-mini {
+    padding: 8px 12px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+}
+@media (max-width: 480px) {
+  .sucursales .sucursales-header h2 {
+    font-size: 30px;
+  }
+  .sucursales .sucursal-card {
+    aspect-ratio: 16/11;
+  }
+  .sucursales .btn-mini {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+}
 
 /* ==========================
    PEDIDOS
@@ -937,6 +1219,46 @@ body .modal-open {
 }
 .pedidos .pedido-card--tucan {
   border-top: 3px solid #18b179;
+}
+@media (max-width: 768px) {
+  .pedidos .pedidos-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    width: min(520px, 92vw);
+  }
+  .pedidos .pedido-card {
+    padding: 18px 18px;
+    border-radius: 18px;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+  }
+  .pedidos .pedido-card__logo {
+    height: 34px;
+    justify-content: center;
+  }
+  .pedidos .pedido-card__texto h3 {
+    font-size: 18px;
+  }
+  .pedidos .pedido-card__texto p {
+    font-size: 14px;
+  }
+  .pedidos .pedido-card__btn {
+    align-self: center;
+    width: 100%;
+    max-width: 260px;
+  }
+}
+@media (max-width: 480px) {
+  .pedidos .pedido-card {
+    padding: 16px 14px;
+  }
+  .pedidos .pedido-card__logo {
+    height: 30px;
+  }
+  .pedidos .pedido-card__btn {
+    max-width: 240px;
+  }
 }
 
 /* ==========================
@@ -1137,6 +1459,81 @@ body .modal-open {
     transform: translateX(0);
   }
 }
+@media (max-width: 768px) {
+  .franquicias {
+    padding: 70px 0 80px;
+  }
+  .franquicias .franquicias-header {
+    padding: 0 14px;
+  }
+  .franquicias .franquicias-header h2 {
+    font-size: 34px;
+  }
+  .franquicias .franquicias-header p {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+  .franquicias .franquicias-header .franquicias-sub {
+    font-size: 14px;
+  }
+  .franquicias .franquicias-form {
+    width: min(520px, 92vw);
+    padding: 18px 14px 22px;
+    border-radius: 20px;
+  }
+  .franquicias .franq-block {
+    padding: 14px 12px 16px;
+    border-radius: 16px;
+    margin-bottom: 14px;
+  }
+  .franquicias .franq-block legend {
+    font-size: 16px;
+    padding: 0 8px;
+    margin-bottom: 10px;
+  }
+  .franquicias .franq-grid {
+    gap: 14px;
+  }
+  .franquicias .franq-grid--2 {
+    grid-template-columns: 1fr;
+  }
+  .franquicias .franq-field {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .franquicias .franq-field label {
+    font-size: 13px;
+  }
+  .franquicias .franq-field input,
+  .franquicias .franq-field select,
+  .franquicias .franq-field textarea {
+    font-size: 14px;
+    padding: 11px 12px;
+    border-radius: 12px;
+  }
+  .franquicias .franq-field textarea {
+    min-height: 120px;
+  }
+  .franquicias .franq-btn-enviar {
+    width: 100%;
+    max-width: 360px;
+    padding: 12px 18px;
+    margin-top: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .franquicias .franquicias-header h2 {
+    font-size: 30px;
+  }
+  .franquicias .franquicias-form {
+    width: min(440px, 92vw);
+    padding: 16px 12px 18px;
+    border-radius: 18px;
+  }
+  .franquicias .franq-block legend {
+    font-size: 15px;
+  }
+}
 
 /* ==========================
    CONTACTO
@@ -1265,11 +1662,16 @@ body .modal-open {
   opacity: 0.75;
   cursor: progress;
   pointer-events: none;
+  color: transparent;
   position: relative;
 }
 .contacto .contacto-btn.is-loading::after {
-  content: " Enviando…";
-  letter-spacing: 0.09em;
+  content: "Enviando…";
+  color: #F8F6F1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .contacto .contacto-alerta {
   margin-top: 6px;
@@ -1291,6 +1693,61 @@ body .modal-open {
   }
   100% {
     transform: translateX(0);
+  }
+}
+@media (max-width: 768px) {
+  .contacto {
+    padding: 60px 0 70px;
+  }
+  .contacto .contacto-header {
+    padding: 0 16px;
+  }
+  .contacto .contacto-header h2 {
+    font-size: 34px;
+    line-height: 1.05;
+  }
+  .contacto .contacto-header p {
+    font-size: 14px;
+  }
+  .contacto .contacto-form {
+    width: min(560px, 92vw);
+    padding: 18px 14px 20px;
+    border-radius: 18px;
+  }
+  .contacto .contacto-form__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .contacto .contacto-field label {
+    font-size: 13px;
+  }
+  .contacto .contacto-field input,
+  .contacto .contacto-field textarea {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 14px;
+  }
+  .contacto .contacto-field textarea {
+    min-height: 140px;
+  }
+  .contacto .contacto-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 18px;
+    margin-top: 6px;
+  }
+  .contacto .contacto-form:focus-within {
+    transform: translateY(-2px);
+  }
+}
+@media (max-width: 480px) {
+  .contacto .contacto-header h2 {
+    font-size: 30px;
+  }
+  .contacto .contacto-form {
+    padding: 16px 12px 18px;
   }
 }
 
@@ -1360,6 +1817,51 @@ body .modal-open {
   margin: 0;
   line-height: 1.35;
 }
+@media (max-width: 768px) {
+  .footer {
+    padding: 36px 0 26px;
+  }
+  .footer .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: center;
+  }
+  .footer .footer-left,
+  .footer .footer-center,
+  .footer .footer-right {
+    justify-self: center;
+    text-align: center;
+  }
+  .footer .footer-logo-img {
+    width: 160px;
+    margin: 0 auto;
+  }
+  .footer .footer-social-text {
+    margin-top: 4px;
+    font-size: 13px;
+  }
+  .footer .footer-instagram {
+    justify-content: center;
+    font-size: 14px;
+  }
+  .footer .footer-copy {
+    font-size: 12px;
+    opacity: 0.85;
+    max-width: 30ch;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 0 22px;
+  }
+  .footer .footer-logo-img {
+    width: 140px;
+  }
+  .footer .footer-inner {
+    gap: 14px;
+  }
+}
 
 #pedidos h2,
 #productos h2 {
@@ -1423,4 +1925,12 @@ body .modal-open {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+@media (max-width: 768px) {
+  .btn-top {
+    right: 14px;
+    bottom: 14px;
+    width: 42px;
+    height: 42px;
+  }
 }/*# sourceMappingURL=inicio.css.map */

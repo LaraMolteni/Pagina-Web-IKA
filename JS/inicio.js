@@ -82,18 +82,22 @@ const observer = new IntersectionObserver(
 
 sections.forEach(section => observer.observe(section));
 
+// =========================
+// PRODUCTOS SWIPERS
+// =========================
 
 const swiperSabores = new Swiper(".sabores-swiper .swiper", {
   loop: true,
-  speed: 1500,
-  spaceBetween: 60,
+  speed: 1400,
+  spaceBetween: 44,
   slidesPerView: 3,
+  centeredSlides: true,
 
   allowTouchMove: true,
   grabCursor: true,
 
   autoplay: {
-    delay: 200,
+    delay: 900,
     disableOnInteraction: false,
   },
 
@@ -103,25 +107,17 @@ const swiperSabores = new Swiper(".sabores-swiper .swiper", {
   },
 
   breakpoints: {
-    0: {
-      slidesPerView: 1.4,
-      spaceBetween: 34,
-    },
-    600: {
-      slidesPerView: 2,
-      spaceBetween: 44,
-    },
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 60,
-    },
+    0: { slidesPerView: 1, spaceBetween: 18 },
+    480: { slidesPerView: 1, spaceBetween: 22 },
+    768: { slidesPerView: 2, spaceBetween: 30 },
+    1024: { slidesPerView: 3, spaceBetween: 44 },
   },
 });
 
 
 const swiperPaletas = new Swiper(".paletas-swiper .swiper", {
   loop: true,
-  speed: 1200,
+  speed: 1500,
   spaceBetween: 110,
   slidesPerView: 3,
 
@@ -139,11 +135,22 @@ const swiperPaletas = new Swiper(".paletas-swiper .swiper", {
   },
 
   breakpoints: {
-    0: { slidesPerView: 1.2 },
-    480: { slidesPerView: 2 },
-    768: { slidesPerView: 3 },
-    1024: { slidesPerView: 4 },
-    1280: { slidesPerView: 4 },
+    0: {
+      slidesPerView: 2, 
+      spaceBetween: 20,
+    },
+    480: {
+      slidesPerView: 2,   
+      spaceBetween: 24,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 110,
+    },
   },
 });
 
@@ -463,7 +470,6 @@ if (contactoForm) {
 
     contactoSending = true;
     contactoBtn.classList.add('is-loading');
-    contactoMsg.textContent = 'Enviando mensaje...';
 
     fetch(scriptURL, {
       method: 'POST',
@@ -486,16 +492,17 @@ if (contactoForm) {
   });
 }
 
-
-
+let _scrollY = 0;
 
 function lockScroll() {
   _scrollY = window.scrollY || document.documentElement.scrollTop;
+  document.body.style.overflow = "hidden";
   document.body.style.top = `-${_scrollY}px`;
   document.body.classList.add("modal-open");
 }
 
 function unlockScroll() {
+  document.body.style.overflow = "";
   document.body.classList.remove("modal-open");
   document.body.style.top = "";
   window.scrollTo(0, _scrollY);
