@@ -1336,11 +1336,16 @@ body .modal-open {
   opacity: 0.75;
   cursor: progress;
   pointer-events: none;
+  color: transparent;
   position: relative;
 }
 .franquicias .franquicias-form .franq-btn-enviar.is-loading::after {
-  content: " Enviando…";
-  letter-spacing: 0.12em;
+  content: "Enviando…";
+  color: #F8F6F1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .franquicias .franq-block {
   border: 1px solid #C0DFC0;

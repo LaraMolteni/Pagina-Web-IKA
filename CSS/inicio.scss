@@ -1128,14 +1128,14 @@ body {
 
     .sobre-container {
       width: min(920px, 92vw);
-      flex-direction: column; 
+      flex-direction: column;
       align-items: center;
       gap: 18px;
     }
 
     .sobre-imgs {
       width: 100%;
-      max-width: 520px; 
+      max-width: 520px;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
 
@@ -1144,7 +1144,7 @@ body {
 
         &:nth-child(1) {
           grid-column: 1 / -1;
-          aspect-ratio: 16 / 9; 
+          aspect-ratio: 16 / 9;
         }
       }
     }
@@ -1643,12 +1643,17 @@ body {
         opacity: .75;
         cursor: progress;
         pointer-events: none;
+        color: transparent;
         position: relative;
       }
 
       &.is-loading::after {
-        content: " Enviando…";
-        letter-spacing: .12em;
+        content: "Enviando…";
+        color: #F8F6F1;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
       }
     }
   }

@@ -337,7 +337,7 @@ form.addEventListener('submit', (e) => {
   // Enviar
   isSending = true;
   submitBtn.classList.add('is-loading');
-  msg.textContent = 'Enviando solicitud...';
+  
 
   fetch(scriptURL, {
     method: 'POST',
