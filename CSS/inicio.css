@@ -275,25 +275,17 @@ body .modal-open {
   ========================= */
 }
 .productos-slider .subtitulo {
-  font: 700 28px "Lora", serif;
-  letter-spacing: 0.18em;
+  font: 700 clamp(18px, 4.4vw, 28px) "Lora", serif;
+  letter-spacing: clamp(0.1em, 1.1vw, 0.18em);
   text-transform: uppercase;
   position: relative;
-  padding-bottom: 10px;
-  margin: 35px 35px 20px;
+  padding-bottom: clamp(8px, 2vw, 10px);
+  margin: clamp(18px, 4.5vw, 35px) clamp(14px, 5vw, 35px) clamp(12px, 3vw, 20px);
   color: #2E5A44;
   opacity: 0.85;
-  animation: fadeUp 0.6s ease both;
-}
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  line-height: 1.15;
+  text-wrap: balance;
+  max-width: 22ch;
 }
 .productos-slider .subtitulo--left {
   text-align: left;
@@ -303,25 +295,40 @@ body .modal-open {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: min(520px, 100%);
   height: 1.5px;
   background: linear-gradient(to right, transparent 0%, rgba(46, 90, 68, 0.35) 30%, rgba(46, 90, 68, 0.35) 70%, transparent 100%);
   opacity: 0.85;
 }
 .productos-slider .subtitulo--right {
   text-align: right;
-  padding-bottom: 6px;
-  margin-top: 15px;
+  margin-top: clamp(10px, 2.8vw, 15px);
+  padding-bottom: clamp(6px, 1.6vw, 6px);
 }
 .productos-slider .subtitulo--right::after {
   content: "";
   position: absolute;
-  left: 0;
+  right: 0;
+  left: auto;
   bottom: 0;
-  width: 100%;
+  width: min(520px, 100%);
   height: 1.5px;
-  background: linear-gradient(to right, transparent 0%, rgba(46, 90, 68, 0.35) 30%, rgba(46, 90, 68, 0.35) 70%, transparent 100%);
+  background: linear-gradient(to left, transparent 0%, rgba(46, 90, 68, 0.35) 30%, rgba(46, 90, 68, 0.35) 70%, transparent 100%);
   opacity: 0.85;
+}
+@media (max-width: 480px) {
+  .productos-slider .subtitulo {
+    max-width: none;
+    text-align: center;
+  }
+  .productos-slider .subtitulo--left::after,
+  .productos-slider .subtitulo--right::after {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(320px, 100%);
+    background: linear-gradient(to right, transparent 0%, rgba(46, 90, 68, 0.35) 30%, rgba(46, 90, 68, 0.35) 70%, transparent 100%);
+  }
 }
 .productos-slider .sabores-swiper {
   width: 100%;
@@ -908,34 +915,35 @@ body .modal-open {
     width: min(920px, 92vw);
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 18px;
   }
-  .sobre-nosotros .sobre-imgs {
+  .sobre-nosotros .sobre-container .sobre-imgs {
     width: 100%;
     max-width: 520px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
-  .sobre-nosotros .sobre-imgs img {
+  .sobre-nosotros .sobre-container .sobre-imgs img {
     border-radius: 16px;
   }
-  .sobre-nosotros .sobre-imgs img:nth-child(1) {
+  .sobre-nosotros .sobre-container .sobre-imgs img:nth-child(1) {
     grid-column: 1/-1;
     aspect-ratio: 16/9;
   }
-  .sobre-nosotros .sobre-texto {
+  .sobre-nosotros .sobre-container .sobre-texto {
     width: 100%;
     text-align: center;
     padding: 0 6px;
   }
-  .sobre-nosotros .sobre-texto h2 {
+  .sobre-nosotros .sobre-container .sobre-texto h2 {
     font-size: 30px;
   }
-  .sobre-nosotros .sobre-texto h3 {
+  .sobre-nosotros .sobre-container .sobre-texto h3 {
     font-size: 14px;
     letter-spacing: 0.14em;
   }
-  .sobre-nosotros .sobre-texto p {
+  .sobre-nosotros .sobre-container .sobre-texto p {
     font-size: 16px;
     line-height: 1.65;
     max-width: 60ch;
@@ -946,17 +954,20 @@ body .modal-open {
   .sobre-nosotros {
     padding: 70px 0 55px;
   }
-  .sobre-nosotros .sobre-imgs {
+  .sobre-nosotros .sobre-container .sobre-imgs {
     max-width: 420px;
     gap: 8px;
   }
-  .sobre-nosotros .sobre-imgs img {
+  .sobre-nosotros .sobre-container .sobre-imgs img {
     border-radius: 14px;
   }
-  .sobre-nosotros .sobre-texto h2 {
+  .sobre-nosotros .sobre-container .sobre-texto {
+    text-align: center;
+  }
+  .sobre-nosotros .sobre-container .sobre-texto h2 {
     font-size: 28px;
   }
-  .sobre-nosotros .sobre-texto p {
+  .sobre-nosotros .sobre-container .sobre-texto p {
     font-size: 15px;
   }
 }
@@ -1221,6 +1232,12 @@ body .modal-open {
   border-top: 3px solid #18b179;
 }
 @media (max-width: 768px) {
+  .pedidos .pedidos-header p {
+    max-width: 26ch;
+    margin: 0 auto;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
   .pedidos .pedidos-grid {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -1870,21 +1887,22 @@ body .modal-open {
 
 #pedidos h2,
 #productos h2 {
-  font: 700 45px "Playfair Display", serif;
-  letter-spacing: 0.02em;
-  margin: 10px 35px 18px;
+  font: 700 clamp(30px, 6vw, 45px) "Playfair Display", serif;
+  letter-spacing: clamp(0.01em, 0.6vw, 0.02em);
+  margin: clamp(8px, 2.5vw, 10px) clamp(16px, 5vw, 35px) clamp(14px, 3vw, 18px);
   text-align: center;
   position: relative;
-  padding-bottom: 18px;
+  padding-bottom: clamp(12px, 2.8vw, 18px);
+  line-height: 1.05;
 }
 #pedidos h2::after,
 #productos h2::after {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: 6px;
+  bottom: clamp(4px, 1.2vw, 6px);
   transform: translateX(-50%);
-  width: 120px;
+  width: clamp(80px, 22vw, 120px);
   height: 2px;
   background: rgba(46, 90, 68, 0.55);
 }
@@ -1895,9 +1913,17 @@ body .modal-open {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 70px;
+  width: clamp(50px, 14vw, 70px);
   height: 1px;
   background: rgba(46, 90, 68, 0.35);
+}
+@media (max-width: 480px) {
+  #pedidos h2,
+  #productos h2 {
+    line-height: 1.1;
+    margin-left: 14px;
+    margin-right: 14px;
+  }
 }
 
 .btn-top {
