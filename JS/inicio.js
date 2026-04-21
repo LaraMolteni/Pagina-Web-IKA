@@ -88,7 +88,7 @@ sections.forEach(section => observer.observe(section));
 
 const swiperSabores = new Swiper(".sabores-swiper .swiper", {
   loop: true,
-  speed: 1400,
+  speed: 800,
   spaceBetween: 44,
   slidesPerView: 3,
   centeredSlides: true,
@@ -97,9 +97,12 @@ const swiperSabores = new Swiper(".sabores-swiper .swiper", {
   grabCursor: true,
 
   autoplay: {
-    delay: 900,
+    delay: 2500,
     disableOnInteraction: false,
   },
+
+  preloadImages: false,
+  lazy: true,
 
   navigation: {
     nextEl: ".sabores-swiper .swiper-span-next",
@@ -136,11 +139,11 @@ const swiperPaletas = new Swiper(".paletas-swiper .swiper", {
 
   breakpoints: {
     0: {
-      slidesPerView: 2, 
+      slidesPerView: 2,
       spaceBetween: 20,
     },
     480: {
-      slidesPerView: 2,   
+      slidesPerView: 2,
       spaceBetween: 24,
     },
     768: {
@@ -337,7 +340,7 @@ form.addEventListener('submit', (e) => {
   // Enviar
   isSending = true;
   submitBtn.classList.add('is-loading');
-  
+
 
   fetch(scriptURL, {
     method: 'POST',
