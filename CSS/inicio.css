@@ -879,6 +879,13 @@ body .modal-open {
 .sobre-nosotros .sobre-fila:last-child {
   margin-bottom: 0;
 }
+.sobre-nosotros .sobre-fila.sobre-fila-invertida {
+  flex-direction: row-reverse;
+}
+.sobre-nosotros .sobre-fila.sobre-fila-invertida .sobre-texto {
+  padding: 0 40px 0 0;
+  text-align: right;
+}
 .sobre-nosotros .sobre-img-destacada,
 .sobre-nosotros .sobre-imgs-secundarias,
 .sobre-nosotros .sobre-img-galeria-mini {

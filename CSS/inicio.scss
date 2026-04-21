@@ -1096,6 +1096,15 @@ body {
     &:last-child {
       margin-bottom: 0;
     }
+
+    &.sobre-fila-invertida {
+      flex-direction: row-reverse;
+
+      .sobre-texto {
+        padding: 0 40px 0 0; 
+        text-align: right; 
+      }
+    }
   }
 
   .sobre-img-destacada,
