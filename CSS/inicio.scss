@@ -1101,8 +1101,8 @@ body {
       flex-direction: row-reverse;
 
       .sobre-texto {
-        padding: 0 40px 0 0; 
-        text-align: right; 
+        padding: 0 40px 0 0;
+        text-align: right;
       }
     }
   }
@@ -1212,9 +1212,16 @@ body {
     padding: 80px 0 60px;
 
     .sobre-fila {
-      flex-direction: column;
+      flex-direction: column; // Fila normal: Texto arriba, Imagen abajo
       gap: 40px;
       margin-bottom: 60px;
+
+      // ESTO ES LO QUE AGREGAMOS:
+      &.sobre-fila-invertida {
+        flex-direction: column; // También texto arriba e imagen abajo
+        // Si quieres que en móvil la imagen aparezca ANTES que el texto, 
+        // usa: flex-direction: column-reverse;
+      }
     }
 
     .sobre-img-destacada,
@@ -1224,7 +1231,7 @@ body {
       width: 100%;
       max-width: 100%;
       flex: none;
-      padding: 0;
+      padding: 0 !important; // El !important asegura que mate el padding-right de escritorio
       text-align: center;
     }
 
@@ -1240,6 +1247,7 @@ body {
       p {
         margin: 0 auto 20px;
         font-size: 16px;
+        max-width: 100%; // Asegura que use todo el ancho disponible
       }
     }
 
@@ -1260,7 +1268,8 @@ body {
     .sobre-imgs-secundarias,
     .sobre-img-galeria-mini {
       gap: 10px;
-      // Si prefieres que las fotos salgan una debajo de otra en móvil:
+      // En celulares muy pequeños, 2 columnas pueden verse diminutas.
+      // Si ves que quedan mal, descomenta la línea de abajo:
       // grid-template-columns: 1fr; 
     }
   }

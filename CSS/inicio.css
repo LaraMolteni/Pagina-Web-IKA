@@ -987,6 +987,9 @@ body .modal-open {
     gap: 40px;
     margin-bottom: 60px;
   }
+  .sobre-nosotros .sobre-fila.sobre-fila-invertida {
+    flex-direction: column;
+  }
   .sobre-nosotros .sobre-img-destacada,
   .sobre-nosotros .sobre-imgs-secundarias,
   .sobre-nosotros .sobre-img-galeria-mini,
@@ -994,7 +997,7 @@ body .modal-open {
     width: 100%;
     max-width: 100%;
     flex: none;
-    padding: 0;
+    padding: 0 !important;
     text-align: center;
   }
   .sobre-nosotros .sobre-texto h2 {
@@ -1006,6 +1009,7 @@ body .modal-open {
   .sobre-nosotros .sobre-texto p {
     margin: 0 auto 20px;
     font-size: 16px;
+    max-width: 100%;
   }
   .sobre-nosotros .sobre-cita {
     text-align: left;
