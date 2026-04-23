@@ -1272,7 +1272,7 @@ body {
     .sobre-img-galeria-mini {
       display: grid;
       grid-template-columns: 1fr;
-      width: 90%;
+      width: 70%;
       margin: 0 auto;
       gap: 10px;
 
@@ -1281,7 +1281,8 @@ body {
         aspect-ratio: 1 / 1;
         width: 100%;
         min-width: 0;
-        height: auto;
+        height: 100%;
+        min-height: 0;
         object-fit: cover;
 
         &:last-child {
