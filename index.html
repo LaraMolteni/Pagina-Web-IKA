@@ -1,53 +1,51 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IKA Helados de Autor</title>
-    <meta name="description"
-        content="Helados artesanales de autor. Pedidos online, sucursales y franquicias en Rosario.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale=1.0, user-scalable=no">
+    <title>Heladeria ika</title>
+    <meta name="description" content="Helados artesanales, pedidos online, sucursales y franquicias." />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link rel="preload" as="image" href="img/fondo.png">
-    <link rel="preload" as="image" href="img/chocolates.png">
-    <link rel="preload" as="image" href="img/frutales.png">
-    <link rel="preload" as="image" href="img/dulcedeleche.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link
         href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="CSS/inicio.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/inicio.css">
+    <link rel="preload" as="image" href="img/chocolates.png">
+    <link rel="preload" as="image" href="img/frutales.png">
+    <link rel="preload" as="image" href="img/dulcedeleche.png">
 </head>
 
 <body>
 
-    <!-- ========== HEADER ========== -->
-    <header class="encabezado" role="banner">
-        <img src="img/fondo.png" alt="" class="encabezado-img" aria-hidden="true" fetchpriority="high">
-        <img src="img/ika_logo.svg" alt="IKA Helados de Autor" class="ika-logo" fetchpriority="high">
+
+    <header class="encabezado">
+        <img src="img/fondo.png" alt="" class="encabezado-img" aria-hidden="true">
+
+        <img src="img/ika_logo.svg" alt="IKA Helados de Autor" class="ika-logo">
     </header>
 
-    <!-- ========== NAVEGACIÓN ========== -->
-    <nav class="topbar" id="topbar" aria-label="Navegación principal">
+
+    <!-- Barra de navegación -->
+    <nav class="topbar" id="topbar" aria-label="Principal">
         <button class="topbar__toggle" type="button" aria-controls="topbarMenu" aria-expanded="false"
             aria-label="Abrir menú">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
 
-        <ul id="topbarMenu" class="topbar__menu" role="list">
+        <ul id="topbarMenu" class="topbar__menu">
             <li><a href="#productos" class="active">Productos</a></li>
             <li><a href="#sobre">Sobre nosotros</a></li>
             <li><a href="#sucursales">Sucursales</a></li>
@@ -57,52 +55,47 @@
         </ul>
     </nav>
 
-    <!-- ========== PRODUCTOS ========== -->
-    <section id="productos" class="productos-slider" aria-label="Productos">
+
+    <!-- Productos -->
+    <section id="productos" class="productos-slider">
         <h2>Productos</h2>
 
         <!-- SABORES -->
         <h3 class="subtitulo subtitulo--left">Nuestros sabores</h3>
 
-        <div class="sabores-swiper" role="region" aria-label="Categorías de sabores">
-            <button class="swiper-span-prev" aria-label="Categoría anterior"></button>
-            <button class="swiper-span-next" aria-label="Categoría siguiente"></button>
+        <div class="sabores-swiper">
+            <button class="swiper-span-prev" aria-label="Anterior"></button>
+            <button class="swiper-span-next" aria-label="Siguiente"></button>
 
             <div class="sabores-mask">
                 <div class="swiper">
                     <div class="swiper-wrapper">
 
+                        <!-- CATEGORÍAS -->
                         <div class="swiper-slide">
-                            <span class="chip chip-category" data-open="chocolates" role="button" tabindex="0"
-                                aria-label="Ver sabores de Chocolates">
-                                <img src="img/chocolates.png" class="chip__img" alt="Categoría Chocolates"
-                                    fetchpriority="high">
+                            <span class="chip chip-category" data-open="chocolates">
+                                <img src="img/chocolates.png" class="chip__img" fetchpriority="high">
                                 <span class="chip__label">Chocolates</span>
                             </span>
                         </div>
 
                         <div class="swiper-slide">
-                            <span class="chip chip-category" data-open="dulcedeleche" role="button" tabindex="0"
-                                aria-label="Ver sabores de Dulce de leche">
-                                <img src="img/dulcedeleche.png" class="chip__img" alt="Categoría Dulce de leche"
-                                    fetchpriority="high">
+                            <span class="chip chip-category" data-open="dulcedeleche">
+                                <img src="img/dulcedeleche.png" class="chip__img" fetchpriority="high">
                                 <span class="chip__label">Dulce de leche</span>
                             </span>
                         </div>
 
                         <div class="swiper-slide">
-                            <span class="chip chip-category" data-open="cremas" role="button" tabindex="0"
-                                aria-label="Ver sabores de Cremas">
-                                <img src="img/cremas.png" class="chip__img" alt="Categoría Cremas" loading="lazy">
+                            <span class="chip chip-category" data-open="cremas">
+                                <img src="img/cremas.png" class="chip__img" fetchpriority="high">
                                 <span class="chip__label">Cremas</span>
                             </span>
                         </div>
 
                         <div class="swiper-slide">
-                            <span class="chip chip-category" data-open="frutales" role="button" tabindex="0"
-                                aria-label="Ver sabores de Frutales">
-                                <img src="img/frutales.png" class="chip__img" alt="Categoría Frutales"
-                                    fetchpriority="high">
+                            <span class="chip chip-category" data-open="frutales">
+                                <img src="img/frutales.png" class="chip__img" fetchpriority="high">
                                 <span class="chip__label">Frutales</span>
                             </span>
                         </div>
@@ -112,37 +105,41 @@
             </div>
         </div>
 
-        <!-- Datos de sabores (oculto, usado por JS) -->
-        <div class="sabores-data" id="saboresData" hidden aria-hidden="true">
-            <!-- CHOCOLATES -->
+        <div class="sabores-data" id="saboresData" hidden>
             <span class="chip" data-group="chocolates"
                 data-desc="Chocolate intenso, profundo y con final levemente amargo"><span class="chip__label">Chocolate
-                    al 70%</span></span>
+                    al
+                    70%</span></span>
             <span class="chip" data-group="chocolates"
                 data-desc="Chocolate intenso con almendras tostadas y caramelizadas"><span class="chip__label">Chocolate
-                    al 70% con almendras caramelizadas</span></span>
+                    al 70% con
+                    almendras caramelizadas</span></span>
             <span class="chip is-new" data-group="chocolates"
                 data-desc="Chocolate semiamargo con variegato de pistacho y masa kadayif"><span
                     class="chip__label">Chocolate Dubai</span></span>
             <span class="chip" data-group="chocolates"
                 data-desc="Dulzura cremosa con un contraste ácido de frambuesas. Equilibrio perfecto"><span
-                    class="chip__label">Chocolate blanco con frambuesas</span></span>
-            <!-- DULCE DE LECHE -->
+                    class="chip__label">Chocolate blanco
+                    con
+                    frambuesas</span></span>
             <span class="chip" data-group="dulcedeleche"
                 data-desc="El de siempre: suave, cremoso y bien argentino"><span class="chip__label">Dulce de leche
                     clásico</span></span>
             <span class="chip" data-group="dulcedeleche"
                 data-desc="Nuestra versión de dulce de leche: con chocolate blanco, mantecol y más dulce de leche"><span
-                    class="chip__label">Dulce de leche IKA</span></span>
+                    class="chip__label">Dulce de
+                    leche IKA</span></span>
             <span class="chip" data-group="dulcedeleche"
                 data-desc="Dulce de leche con trozos de chocolate que aportan crocante"><span class="chip__label">Dulce
-                    de leche granizado</span></span>
+                    de
+                    leche granizado</span></span>
             <span class="chip" data-group="dulcedeleche"
                 data-desc="Dulce de leche cremoso con nueces tostadas y textura envolvente"><span
-                    class="chip__label">Dulce de leche con nuez</span></span>
-            <!-- CREMAS -->
+                    class="chip__label">Dulce
+                    de leche con nuez</span></span>
             <span class="chip" data-group="cremas" data-desc="Menta fresca con lajas de chocolate semi amargo"><span
-                    class="chip__label">Menta Stracciatella</span></span>
+                    class="chip__label">Menta
+                    Stracciatella</span></span>
             <span class="chip is-new" data-group="cremas" data-desc="Clásico granizado"><span
                     class="chip__label">Straciatella</span></span>
             <span class="chip is-new" data-group="cremas"
@@ -150,9 +147,11 @@
                     Straciatella</span></span>
             <span class="chip" data-group="cremas"
                 data-desc="Crema americana con trozos de galletitas de cacao y dulce de leche"><span
-                    class="chip__label">Cookies & Cream</span></span>
+                    class="chip__label">Cookies &
+                    Cream</span></span>
             <span class="chip" data-group="cremas" data-desc="Pistacho puro, con identidad italiana"><span
-                    class="chip__label">Pistachio Di Bronte</span></span>
+                    class="chip__label">Pistachio Di
+                    Bronte</span></span>
             <span class="chip" data-group="cremas"
                 data-desc="Crema de mascarpone con un veteado ácido de frutos rojos"><span
                     class="chip__label">Mascarpone con frutos del bosque</span></span>
@@ -164,10 +163,12 @@
             <span class="chip" data-group="cremas" data-desc="Crema de avellanas y chocolate con galletitas"><span
                     class="chip__label">Kinder</span></span>
             <span class="chip" data-group="cremas" data-desc="Yogurt cremoso con acidez tropical y fresca"><span
-                    class="chip__label">Yogurt griego con maracuyá</span></span>
+                    class="chip__label">Yogurt griego con
+                    maracuyá</span></span>
             <span class="chip" data-group="cremas"
                 data-desc="Crema con notas de caramelo y un toque de sal que realza todo"><span
-                    class="chip__label">Caramelo salado</span></span>
+                    class="chip__label">Caramelo
+                    salado</span></span>
             <span class="chip" data-group="cremas" data-desc="Clásico a base de yemas y vino, aireado y elegante"><span
                     class="chip__label">Sabayón</span></span>
             <span class="chip" data-group="cremas"
@@ -177,43 +178,48 @@
                 data-desc="La mejor versión helada del clásico bombón raffaello"><span
                     class="chip__label">Coconut</span></span>
             <span class="chip" data-group="cremas" data-desc="Banana con salsa toffee y dulce de leche"><span
-                    class="chip__label">Banana toffee</span></span>
+                    class="chip__label">Banana
+                    toffee</span></span>
             <span class="chip" data-group="cremas" data-desc="Crema batida suave con frutillas frescas"><span
-                    class="chip__label">Chantilly con frutillas</span></span>
+                    class="chip__label">Chantilly con
+                    frutillas</span></span>
             <span class="chip" data-group="cremas"
                 data-desc="Sabor a flan tradicional con caramelo y dulce de leche. Simple y perfecto"><span
-                    class="chip__label">Flan casero</span></span>
+                    class="chip__label">Flan
+                    casero</span></span>
             <span class="chip" data-group="cremas" data-desc="Limón intenso con notas dulces y galletas"><span
-                    class="chip__label">Lemon pie</span></span>
+                    class="chip__label">Lemon
+                    pie</span></span>
             <span class="chip" data-group="cremas" data-desc="Crema de licor Baileys. Suave y elegante"><span
-                    class="chip__label">Baileys Frozen</span></span>
+                    class="chip__label">Baileys
+                    Frozen</span></span>
             <span class="chip" data-group="cremas" data-desc="Clásica, aromática y necesaria"><span
                     class="chip__label">Vainilla</span></span>
             <span class="chip" data-group="cremas" data-desc="Crema dulce, simple y delicada"><span
                     class="chip__label">Americana</span></span>
-            <!-- FRUTALES -->
             <span class="chip" data-group="frutales"
                 data-desc="Frutillas reales, frescas y vibrantes. Puro sabor a fruta"><span class="chip__label">Sorbette
-                    de frutilla</span></span>
+                    de
+                    frutilla</span></span>
             <span class="chip" data-group="frutales"
                 data-desc="Refrescante y herbal, con un toque cítrico y picante"><span class="chip__label">Sorbette de
-                    limón, menta y jengibre</span></span>
+                    limón, menta
+                    y jengibre</span></span>
             <span class="chip" data-group="frutales"
                 data-desc="Cítrico natural, jugoso, equilibrado entre dulzor y acidez."><span
-                    class="chip__label">Sorbette de naranja/mandarina</span></span>
+                    class="chip__label">Sorbette de
+                    naranja/mandarina</span></span>
             <span class="chip" data-group="frutales"
                 data-desc="Duraznos maduros, suaves y aromáticos. Verano en estado puro"><span
-                    class="chip__label">Sorbette de durazno</span></span>
+                    class="chip__label">Sorbette de
+                    durazno</span></span>
         </div>
 
-        <!-- Modal de sabores -->
-        <div class="sabores-modal" id="saboresModal" hidden role="dialog" aria-modal="true"
-            aria-labelledby="saboresModalTitle">
-            <div class="sabores-modal__backdrop" data-close="1" aria-hidden="true"></div>
-            <div class="sabores-modal__content">
+        <div class="sabores-modal" id="saboresModal" hidden>
+            <div class="sabores-modal__backdrop" data-close="1"></div>
+            <div class="sabores-modal__content" role="dialog" aria-modal="true" aria-labelledby="saboresModalTitle">
                 <button class="sabores-modal__close" type="button" data-close="1" aria-label="Cerrar">×</button>
-                <div class="sabores-modal__header">
-                    <img id="saboresModalImg" class="sabores-modal__img" alt="">
+                <div class="sabores-modal__header"> <img id="saboresModalImg" class="sabores-modal__img" alt="" />
                     <div>
                         <h3 id="saboresModalTitle"></h3>
                         <p class="sabores-modal__sub">Elegí tu favorito ✨</p>
@@ -226,9 +232,10 @@
         <!-- PALETAS -->
         <h3 class="subtitulo subtitulo--right">Paletas</h3>
 
-        <div class="paletas-swiper" role="region" aria-label="Paletas">
-            <button class="swiper-paletas-prev" aria-label="Paleta anterior"></button>
-            <button class="swiper-paletas-next" aria-label="Paleta siguiente"></button>
+        <div class="paletas-swiper">
+
+            <button class="swiper-paletas-prev" aria-label="Anterior"></button>
+            <button class="swiper-paletas-next" aria-label="Siguiente"></button>
 
             <div class="paletas-mask">
                 <div class="swiper">
@@ -236,32 +243,32 @@
 
                         <div class="swiper-slide">
                             <figure class="sabor-card" data-desc="Choco Dark (vegano)">
-                                <img src="img/paleta-choco.png" alt="Paleta Choco Dark vegano" loading="lazy">
+                                <img src="img/paleta-choco.png" alt="Paleta de chocolate negro">
                             </figure>
                         </div>
 
                         <div class="swiper-slide">
                             <figure class="sabor-card" data-desc="Kinder">
-                                <img src="img/paleta-kinder.png" alt="Paleta Kinder" loading="lazy">
+                                <img src="img/paleta-kinder.png" alt="Paleta kinder">
                             </figure>
                         </div>
 
                         <div class="swiper-slide">
                             <figure class="sabor-card" data-desc="Pistacho">
-                                <img src="img/paleta-pistacho.png" alt="Paleta Pistacho" loading="lazy">
+                                <img src="img/paleta-pistacho.png" alt="Paleta de pistacho">
                             </figure>
                         </div>
 
                         <div class="swiper-slide">
                             <figure class="sabor-card" data-desc="Cheesecake de mango y maracuyá">
-                                <img src="img/paleta-cheesecakemango.png" alt="Paleta Cheesecake de mango y maracuyá"
-                                    loading="lazy">
+                                <img src="img/paleta-cheesecakemango.png"
+                                    alt="Paleta de cheesecake de mango y maracuyá">
                             </figure>
                         </div>
 
                         <div class="swiper-slide">
                             <figure class="sabor-card" data-desc="Frutilla">
-                                <img src="img/paleta-frutilla.png" alt="Paleta Frutilla" loading="lazy">
+                                <img src="img/paleta-frutilla.png" alt="Paleta de frutilla">
                             </figure>
                         </div>
 
@@ -269,26 +276,29 @@
                 </div>
             </div>
         </div>
+
     </section>
 
-    <!-- ========== SOBRE NOSOTROS ========== -->
-    <section id="sobre" class="sobre-nosotros" aria-label="Sobre nosotros">
+    <!--Sobre nosotros-->
+    <section id="sobre" class="sobre-nosotros">
         <div class="sobre-container">
 
             <div class="sobre-fila">
                 <div class="sobre-texto">
                     <h2>Sobre Nosotros</h2>
                     <h3>Helados de autor, pasión artesanal</h3>
-                    <p>IKA nace de una idea simple, pero exigente: <strong>hacer un helado distinto</strong>.</p>
+                    <p>IKA nace de una idea simple, pero exigente: <b>hacer un helado distinto</b>.</p>
                     <p>El nombre viene de una Estanciera, propiedad del abuelo del socio fundador. Un objeto simple,
-                        pero cargado de historia: trabajo, camino y una forma de hacer las cosas sin atajos. Esa misma
-                        lógica es la que llevamos al helado.</p>
+                        pero
+                        cargado de historia:
+                        trabajo, camino y una forma de hacer las cosas sin atajos. Esa misma lógica es la que llevamos
+                        al
+                        helado.</p>
                 </div>
                 <div class="sobre-img-destacada">
                     <div class="sobre-img-galeria-mini">
-                        <img src="img/ika-estanciera.jpeg" alt="La Estanciera del abuelo, inspiración del nombre IKA"
-                            loading="lazy">
-                        <img src="img/ika-estanciera1.png" alt="Estanciera IKA, vista alternativa" loading="lazy">
+                        <img src="img/ika-estanciera.jpeg" alt="Estanciera del abuelo 1">
+                        <img src="img/ika-estanciera1.png" alt="Estanciera del abuelo 2">
                     </div>
                 </div>
             </div>
@@ -298,118 +308,126 @@
                     <p>No trabajamos con recetas estándar ni fórmulas repetidas. Cada sabor se desarrolla desde cero,
                         buscando equilibrio real entre textura, intensidad y personalidad. Porque para nosotros, un buen
                         helado no es solo rico: tiene que estar pensado.</p>
-                    <p>Somos una marca de <strong>helado de autor</strong>. Eso implica una forma de hacer las cosas:
-                        probar,
-                        ajustar y volver a empezar hasta que cada receta esté donde tiene que estar. La calidad no se
-                        negocia.</p>
+                    <p>Somos una marca de <b>helado de autor</b>. Eso implica una forma de hacer las cosas: probar,
+                        ajustar y volver a empezar hasta que cada receta
+                        esté donde tiene que estar. La calidad no se negocia.</p>
                 </div>
                 <div class="sobre-imgs-secundarias">
-                    <img src="img/ika2.jpg" alt="Helado de autor IKA" loading="lazy">
-                    <img src="img/ika3.jpg" alt="Local IKA" loading="lazy">
+                    <img src="img/ika2.jpg" alt="Helado de autor">
+                    <img src="img/ika3.jpg" alt="Local IKA">
                 </div>
             </div>
 
             <div class="sobre-fila">
                 <div class="sobre-texto">
                     <p>IKA nació el 11 de noviembre de 2021, en el corazón de barrio Alberdi. Empezamos atendiendo solo
-                        por delivery, durante pocas horas al día. Hoy crecemos con nuevas sucursales y franquicias,
-                        manteniendo siempre lo mismo que nos trajo hasta acá: producto propio, identidad clara y una
-                        búsqueda
-                        constante por mejorar.</p>
+                        por
+                        delivery, durante pocas horas al día. Hoy crecemos con nuevas sucursales y franquicias,
+                        manteniendo
+                        siempre lo mismo que nos trajo hasta acá: producto propio, identidad clara y una búsqueda
+                        constante
+                        por mejorar.</p>
                     <blockquote class="sobre-cita">
-                        <p>No buscamos ser una heladería más. Buscamos que <strong>cada sabor tenga sentido</strong>.
-                            Y que cuando lo pruebes, sepas que es <strong>IKA</strong>.</p>
+                        <p>No buscamos ser una heladería más. Buscamos que <b>cada sabor tenga sentido</b>. Y que cuando
+                            lo pruebes, sepas que es <b>IKA</b>.</p>
                     </blockquote>
                 </div>
                 <div class="sobre-img-destacada">
-                    <img src="img/ika1.jpg" alt="Interior del local IKA" loading="lazy">
+                    <img src="img/ika1.jpg" alt="Cierre IKA">
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- ========== SUCURSALES ========== -->
-    <section id="sucursales" class="sucursales" aria-label="Sucursales">
+
+    <!--Sucursales-->
+    <section id="sucursales" class="sucursales section-ika-soft">
         <div class="sucursales-header">
             <h2>Sucursales</h2>
             <p>Encontrá tu IKA más cercano</p>
         </div>
 
         <div class="sucursales-grid">
-
+            <!-- CARD 1 Sucursal Alberdi-->
             <article class="sucursal-card">
-                <div class="sucursal-card__media">
-                    <img src="img/Marull.jpeg" alt="Sucursal Alberdi — Marull 667, Rosario" loading="lazy">
-                </div>
+                <a class="sucursal-card__media" target="_blank" rel="noopener">
+                    <img src="img/Marull.jpeg" alt="Sucursal Alberdi" />
+                </a>
+
                 <div class="sucursal-card__info">
                     <h3>Alberdi</h3>
                     <p>Marull 667 · Rosario</p>
+
                     <div class="sucursal-card__actions">
                         <a class="btn-mini"
-                            href="https://www.google.com/maps/place/IKA+Helados+de+Autor+-+Alberdi/@-32.9063321,-60.6881341,17z"
-                            target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+                            href="https://www.google.com/maps/place/IKA+Helados+de+Autor+-+Alberdi/@-32.9063321,-60.6881341,17z/data=!3m1!4b1!4m6!3m5!1s0x95b653ad832eeb4b:0x35550413e4da753f!8m2!3d-32.9063321!4d-60.6881341!16s%2Fg%2F11t94rcxgb?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener">Cómo llegar</a>
                         <a class="btn-mini btn-mini--wa" href="https://api.whatsapp.com/send?phone=543415409997"
-                            target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                            target="_blank" rel="noopener">
+                            WhatsApp
+                        </a>
                     </div>
                 </div>
             </article>
 
+            <!-- CARD 2 Sucursal Centro-->
             <article class="sucursal-card">
-                <div class="sucursal-card__media">
-                    <img src="img/Moreno.jpg" alt="Sucursal Centro — Mariano Moreno 17, Rosario" loading="lazy">
-                </div>
+                <a class="sucursal-card__media" target="_blank" rel="noopener">
+                    <img src="img/Moreno.jpg" alt="Sucursal Centro" />
+                </a>
                 <div class="sucursal-card__info">
                     <h3>Centro</h3>
                     <p>Mariano Moreno 17 · Rosario</p>
                     <div class="sucursal-card__actions">
                         <a class="btn-mini"
-                            href="https://www.google.com/maps/place/heladeria+ika+moreno/data=!4m2!3m1!1s0x95b7ab9228282ec7:0x4d619cdd105bad0e"
-                            target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+                            href="https://www.google.com/maps/place/heladeria+ika+moreno/data=!4m2!3m1!1s0x95b7ab9228282ec7:0x4d619cdd105bad0e?sa=X&ved=1t:242&ictx=111"
+                            target="_blank" rel="noopener">Cómo llegar</a>
                         <a class="btn-mini btn-mini--wa" href="https://api.whatsapp.com/send?phone=543412720502"
-                            target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                            target="_blank" rel="noopener">WhatsApp</a>
                     </div>
                 </div>
             </article>
 
+            <!-- CARD 3 Sucursal Fisherton-->
             <article class="sucursal-card">
-                <div class="sucursal-card__media">
-                    <img src="img/Fisherton.jpg" alt="Sucursal Fisherton — Schweitzer 9028, Rosario" loading="lazy">
-                </div>
+                <a class="sucursal-card__media" target="_blank" rel="noopener">
+                    <img src="img/Fisherton.jpg" alt="Sucursal Fisherton" />
+                </a>
                 <div class="sucursal-card__info">
                     <h3>Fisherton</h3>
                     <p>Schweitzer 9028 · Rosario</p>
                     <div class="sucursal-card__actions">
                         <a class="btn-mini"
-                            href="https://www.google.com/maps/place/IKA+Helados+de+Autor+-+Fisherton/data=!4m2!3m1!1s0x0:0xdaf69ffb382e8e9e"
-                            target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+                            href="https://www.google.com/maps/place/IKA+Helados+de+Autor+-+Fisherton/data=!4m2!3m1!1s0x0:0xdaf69ffb382e8e9e?sa=X&ved=1t:2428&ictx=111"
+                            target="_blank" rel="noopener">Cómo llegar</a>
                         <a class="btn-mini btn-mini--wa" href="https://api.whatsapp.com/send?phone=543416549063"
-                            target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                            target="_blank" rel="noopener">WhatsApp</a>
                     </div>
                 </div>
             </article>
 
+            <!-- CARD 4 Funes-->
             <article class="sucursal-card">
-                <div class="sucursal-card__media">
-                    <img src="img/Funes.jpg" alt="Sucursal Funes — Catamarca 2414" loading="lazy">
-                </div>
+                <a class="sucursal-card__media" target="_blank" rel="noopener">
+                    <img src="img/Funes.jpg" alt="Sucursal Funes" />
+                </a>
                 <div class="sucursal-card__info">
                     <h3>Funes</h3>
-                    <p>Catamarca 2414 · Funes</p>
+                    <p>Catamarca 2414 · Rosario</p>
                     <div class="sucursal-card__actions">
-                        <a class="btn-mini" href="https://www.google.com/maps/search/?api=1&query=Ika+Helados+Funes"
-                            target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+                        <a class="btn-mini" href="https://www.google.com/maps/search/?api=1&query=Ika+Helados+Recoleta"
+                            target="_blank" rel="noopener">Cómo llegar</a>
                         <a class="btn-mini btn-mini--wa" href="https://api.whatsapp.com/send?phone=543415409997"
-                            target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                            target="_blank" rel="noopener">WhatsApp</a>
                     </div>
                 </div>
             </article>
-
         </div>
     </section>
 
-    <!-- ========== PEDIDOS ========== -->
-    <section id="pedidos" class="pedidos" aria-label="Pedidos online">
+    <!--Pedidos-->
+    <section id="pedidos" class="pedidos">
         <div class="pedidos-header">
             <h2>Pedidos</h2>
             <p>Hacé tu pedido desde tu app favorita</p>
@@ -417,14 +435,19 @@
 
         <div class="pedidos-grid">
 
+            <!-- CARD TUCÁN -->
             <article class="pedido-card pedido-card--tucan">
                 <div class="pedido-card__logo">
-                    <img src="img/logo-tucan.png" alt="Tucán" loading="lazy">
+                    <img src="img/logo-tucan.png" alt="Tucán">
                 </div>
+
                 <div class="pedido-card__texto">
-                    <p>Hacé tu pedido directo a nuestra tienda desde Tucán y elegí tus sabores, presentaciones y
-                        toppings.</p>
+                    <p>
+                        Hacé tu pedido directo a nuestra tienda desde Tucán y elegí
+                        tus sabores, presentaciones y toppings.
+                    </p>
                 </div>
+
                 <a class="pedido-card__btn"
                     href="https://pedir.tucan.la/menu/IKAhelados?utm_source=ig&utm_medium=social&utm_content=link_in_bio"
                     target="_blank" rel="noopener noreferrer">
@@ -432,14 +455,19 @@
                 </a>
             </article>
 
+            <!-- CARD PEDIDOSYA -->
             <article class="pedido-card pedido-card--pedidosya">
                 <div class="pedido-card__logo">
-                    <img src="img/logo-pedidosya.png" alt="PedidosYa" loading="lazy">
+                    <img src="img/logo-pedidosya.png" alt="PedidosYa">
                 </div>
+
                 <div class="pedido-card__texto">
-                    <p>Encontrá IKA Helados en la app de PedidosYa y pedí tu helado favorito para recibirlo en tu casa.
+                    <p>
+                        Encontrá IKA Helados en la app de PedidosYa y pedí tu helado
+                        favorito para recibirlo en tu casa.
                     </p>
                 </div>
+
                 <a class="pedido-card__btn" href="https://www.pedidosya.com.ar/" target="_blank"
                     rel="noopener noreferrer">
                     Pedir por PedidosYa
@@ -449,8 +477,8 @@
         </div>
     </section>
 
-    <!-- ========== FRANQUICIAS ========== -->
-    <section id="franquicias" class="franquicias" aria-label="Franquicias">
+    <!--Franquicias-->
+    <section id="franquicias" class="franquicias">
         <div class="franquicias-header">
             <h2>Franquicias</h2>
             <p>Formá parte de IKA</p>
@@ -459,35 +487,40 @@
             </span>
         </div>
 
-        <form id="franquiciasForm" class="franquicias-form" novalidate aria-label="Formulario de franquicias">
-
+        <form id="franquiciasForm" class="franquicias-form" novalidate>
+            <!-- DATOS PERSONALES -->
             <fieldset class="franq-block">
                 <legend>Datos personales</legend>
+
                 <div class="franq-grid franq-grid--2">
                     <div class="franq-field">
                         <label for="nombre">Nombre y apellido</label>
-                        <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                        <input type="text" id="nombre" name="nombre" required>
                     </div>
+
                     <div class="franq-field">
                         <label for="fecha-nac">Fecha de nacimiento</label>
                         <input type="date" id="fecha-nac" name="fecha_nac" required>
                     </div>
                 </div>
+
                 <div class="franq-grid franq-grid--2">
                     <div class="franq-field">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" autocomplete="email" required>
+                        <input type="email" id="email" name="email" required>
                     </div>
+
                     <div class="franq-field">
                         <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" pattern="\d{6,20}" inputmode="numeric"
-                            autocomplete="tel" required>
+                        <input type="tel" id="telefono" name="telefono" pattern="\d{6,20}" inputmode="numeric" required>
                     </div>
                 </div>
             </fieldset>
 
+            <!-- ZONA DONDE TE GUSTARÍA ABRIR TU IKA -->
             <fieldset class="franq-block">
                 <legend>Zona donde te gustaría abrir tu IKA</legend>
+
                 <div class="franq-grid franq-grid--2">
                     <div class="franq-field">
                         <label for="provincia">Provincia</label>
@@ -519,11 +552,13 @@
                             <option>Tucumán</option>
                         </select>
                     </div>
+
                     <div class="franq-field">
                         <label for="zona">Zona / ciudad</label>
                         <input type="text" id="zona" name="zona" placeholder="Ej: Rosario, zona centro" required>
                     </div>
                 </div>
+
                 <div class="franq-grid franq-grid--2">
                     <div class="franq-field">
                         <label for="local-propio">¿Disponés de local?</label>
@@ -533,20 +568,25 @@
                             <option>No</option>
                         </select>
                     </div>
-                    <div class="franq-field">
-                        <label for="tipo-local">El local es…</label>
-                        <select id="tipo-local" name="tipo_local">
-                            <option value="">Seleccione</option>
-                            <option>Propio</option>
-                            <option>Alquilado</option>
-                        </select>
+
+                    <div class="franq-grid ">
+                        <div class="franq-field">
+                            <label for="tipo-local">El local es...</label>
+                            <select id="tipo-local" name="tipo_local">
+                                <option value="">Seleccione</option>
+                                <option>Propio</option>
+                                <option>Alquilado</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
+
                 <div class="franq-grid franq-grid--2">
                     <div class="franq-field">
                         <label for="metros">Metros cuadrados aproximados</label>
                         <input type="number" id="metros" name="metros" min="0" step="1">
                     </div>
+
                     <div class="franq-field">
                         <label for="direccion-local">Dirección exacta del local</label>
                         <input type="text" id="direccion-local" name="direccion_local" placeholder="Calle, número">
@@ -554,13 +594,16 @@
                 </div>
             </fieldset>
 
+            <!-- INFORMACIÓN FINANCIERA -->
             <fieldset class="franq-block">
                 <legend>Información financiera</legend>
+
                 <div class="franq-grid franq-grid--2">
                     <div class="franq-field">
                         <label for="actividad-actual">Actividad actual</label>
                         <input type="text" id="actividad-actual" name="actividad_actual" required>
                     </div>
+
                     <div class="franq-field">
                         <label for="exper-gastro">¿Tenés experiencia en gastronomía?</label>
                         <select id="exper-gastro" name="exper_gastro">
@@ -570,6 +613,7 @@
                         </select>
                     </div>
                 </div>
+
                 <div class="franq-grid franq-grid--2">
                     <div class="franq-field">
                         <label for="exper-helado">¿Tenés experiencia en heladería?</label>
@@ -579,6 +623,7 @@
                             <option>No</option>
                         </select>
                     </div>
+
                     <div class="franq-field">
                         <label for="inversion">Dinero disponible para inversión (USD)</label>
                         <input type="number" id="inversion" name="inversion_usd" min="0" step="1000" required>
@@ -586,8 +631,10 @@
                 </div>
             </fieldset>
 
+            <!-- INFO ADICIONAL -->
             <fieldset class="franq-block">
                 <legend>Información adicional</legend>
+
                 <div class="franq-field">
                     <label for="comentarios">Contanos un poco más sobre tu idea de proyecto</label>
                     <textarea id="comentarios" name="comentarios" rows="4"
@@ -597,57 +644,62 @@
             </fieldset>
 
             <button type="submit" class="franq-btn-enviar">Enviar solicitud</button>
-            <p id="franquicias-mensaje" class="mensaje-form" aria-live="polite"></p>
+            <p id="franquicias-mensaje" class="mensaje-form"></p>
         </form>
     </section>
 
-    <!-- ========== CONTACTO ========== -->
-    <section id="contacto" class="contacto" aria-label="Contacto">
+    <!--Contacto-->
+    <section id="contacto" class="contacto">
         <div class="contacto-header">
             <h2>Contacto</h2>
-            <p>¿Tenés alguna consulta? ¡Escribinos!</p>
+            <p>¿Tenes alguna consulta? Escribinos!</p>
         </div>
 
-        <form class="contacto-form" id="contactoForm" novalidate aria-label="Formulario de contacto">
+        <form class="contacto-form" id="contactoForm" novalidate>
             <input type="hidden" name="form_tipo" value="contacto">
             <div class="contacto-form__grid">
                 <div class="contacto-field">
                     <label for="c-nombre">Nombre y apellido</label>
-                    <input type="text" id="c-nombre" name="nombre" autocomplete="name" required>
+                    <input type="text" id="c-nombre" name="nombre" required>
                 </div>
+
                 <div class="contacto-field">
                     <label for="c-email">Email</label>
-                    <input type="email" id="c-email" name="email" autocomplete="email" required>
+                    <input type="email" id="c-email" name="email" required>
                 </div>
+
                 <div class="contacto-field">
                     <label for="c-telefono">Teléfono</label>
-                    <input type="tel" id="c-telefono" name="telefono" pattern="\d{6,20}" inputmode="numeric"
-                        autocomplete="tel" required>
+                    <input type="tel" id="c-telefono" name="telefono" required pattern="\d{6,20}" inputmode="numeric">
+
                 </div>
+
                 <div class="contacto-field contacto-field--mensaje">
                     <label for="c-mensaje">Mensaje</label>
                     <textarea id="c-mensaje" name="mensaje" rows="3" required></textarea>
                 </div>
             </div>
+
             <button type="submit" class="contacto-btn">Enviar mensaje</button>
-            <p id="contacto-mensaje" class="contacto-alerta" aria-live="polite"></p>
+            <p id="contacto-mensaje" class="contacto-alerta"></p>
         </form>
     </section>
 
-    <!-- ========== FOOTER ========== -->
-    <footer class="footer" role="contentinfo">
+    <!--Pie de pagina-->
+    <footer class="footer">
         <div class="footer-inner">
             <div class="footer-col footer-left">
-                <img src="img/ika_logo_invert.svg" alt="IKA Helados de Autor" class="footer-logo-img" loading="lazy">
+                <img src="img/ika_logo_invert.svg" alt="IKA Helados de Autor" class="footer-logo-img">
             </div>
+
             <div class="footer-col footer-center">
                 <p class="footer-social-text">Seguinos en nuestras redes</p>
-                <a href="https://www.instagram.com/ikahelados" target="_blank" rel="noopener noreferrer"
-                    class="footer-instagram" aria-label="Instagram de IKA Helados: @ikahelados">
-                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                <a href="https://www.instagram.com/ikahelados" target="_blank" class="footer-instagram">
+                    <i class="fa-brands fa-instagram"></i>
                     @ikahelados
                 </a>
             </div>
+
             <div class="footer-col footer-right">
                 <p class="footer-copy">© 2025 IKA Helados de Autor</p>
                 <p class="footer-copy">Todos los derechos reservados.</p>
@@ -655,18 +707,19 @@
         </div>
     </footer>
 
-    <button id="btn-top" class="btn-top" aria-label="Volver al inicio de la página">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true">
+    <button id="btn-top" class="btn-top" aria-label="Volver arriba" title="Volver arriba">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 14L12 8L18 14" stroke="#2E5A44" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
         </svg>
     </button>
->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="JS/inicio.js" defer></script>
 
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="JS/inicio.js"></script>
 
 </html>
