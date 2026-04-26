@@ -290,6 +290,7 @@ body .modal-open {
 }
 .productos-slider .subtitulo--right {
   text-align: right;
+  max-width: none;
   margin-top: clamp(10px, 2.8vw, 15px);
   padding-bottom: clamp(6px, 1.6vw, 6px);
 }

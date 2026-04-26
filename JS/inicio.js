@@ -99,7 +99,7 @@ const swiperSabores = new Swiper(".sabores-swiper .swiper", {
   grabCursor: true,
 
   autoplay: {
-    delay: 2500,
+    delay: 5000,
     disableOnInteraction: false,
   },
 

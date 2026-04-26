@@ -362,6 +362,7 @@ body {
 
   .subtitulo--right {
     text-align: right;
+    max-width: none;
     margin-top: clamp(10px, 2.8vw, 15px);
     padding-bottom: clamp(6px, 1.6vw, 6px);
 
@@ -405,7 +406,7 @@ body {
   /* =========================
      SWIPER SABORES 
    ========================= */
-  .sabores-swiper {
+  .sabores-swiper {  
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
